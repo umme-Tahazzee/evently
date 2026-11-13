@@ -82,15 +82,10 @@ export function Navbar() {
         </Link>
 
 
-        <nav aria-label="Primary" className="items-center gap-2 md:flex lg:gap-3">
-          <Button variant="secondary" className="hidden lg:flex items-center justify-center gap-2">
+        <nav aria-label="Primary" className="items-center gap-2 flex lg:gap-3">
+          <Button variant="secondary" className="flex items-center justify-center gap-2">
             <CalendarPlus className="size-4 shrink-0 text-[#397C4B]" aria-hidden />
-            <span className="whitespace-nowrap">Start Your Event Management</span>
-          </Button>
-
-          <Button variant="ghost">
-            <LogIn className="size-4 text-[#64736A]" aria-hidden />
-            Log in
+            <span className="whitespace-nowrap hidden md:block">Start Your Event Management</span>
           </Button>
 
           <Button variant="default" className="group">

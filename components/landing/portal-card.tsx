@@ -118,7 +118,7 @@ export function PortalCards() {
       </ul>
 
       {/* Social proof */}
-      <div className="relative z-10 mx-auto mt-8 flex w-fit max-w-full flex-col 
+      <div className="hidden  relative z-10 mx-auto mt-8 lg:flex w-fit max-w-full flex-col 
       items-stretch divide-y divide-teal-800
       rounded-2xl 
        px-2 backdrop-blur-sm
