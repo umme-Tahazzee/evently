@@ -185,7 +185,7 @@ function ArrowKnob() {
 export default function EvenlyWorkflow() {
   return (
     <section className="relative overflow-hidden bg-background px-4 py-14 sm:px-8 lg:py-20">
-      <div aria-hidden className="glow-green pointer-events-none absolute inset-0 opacity-50" />
+      
 
       <div className="relative mx-auto max-w-7xl">
         {/* ---------- Header ---------- */}
