@@ -1,6 +1,6 @@
 
 
-const stripeColors = ["#22d3ee", "#facc15", "#fb923c", "#f87171"];
+const stripeColors = ["#FACC15","#D9F99D", "#86EFAC", "#F97316"];
 
 export function Stripes({ className }: { className?: string }) {
 

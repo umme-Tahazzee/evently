@@ -48,16 +48,25 @@
   --sidebar-ring: oklch(0.708 0 0);
 
   /* ---------- Brand palette (button.tsx theke ana raw colors) ---------- */
-  --brand-300: #78c650; /* default hover (from) */
-  --brand-400: #6dbb45; /* default gradient start */
-  --brand-500: #4b9b25; /* focus ring */
-  --brand-600: #3e8a1e; /* default gradient end */
-  --brand-650: #459423; /* default hover (to) */
-  --brand-700: #2f7a14; /* default border */
+  --brand-300: #78c650;
+  /* default hover (from) */
+  --brand-400: #6dbb45;
+  /* default gradient start */
+  --brand-500: #4b9b25;
+  /* focus ring */
+  --brand-600: #3e8a1e;
+  /* default gradient end */
+  --brand-650: #459423;
+  /* default hover (to) */
+  --brand-700: #2f7a14;
+  /* default border */
 
-  --ink: #172d22; /* secondary + ghost text */
-  --sand-300: #d9d5c7; /* secondary border */
-  --sand-400: #c9c4b2; /* secondary hover border */
+  --ink: #172d22;
+  /* secondary + ghost text */
+  --sand-300: #d9d5c7;
+  /* secondary border */
+  --sand-400: #c9c4b2;
+  /* secondary hover border */
 
   /* Secondary button surface */
   --btn-secondary-from: #ffffff;
@@ -83,13 +92,13 @@
 
   /* ---------- Bottom glow colors (<BottomGlow /> component) ---------- */
   /* Warm: orange + yellow in the middle, cyan left, pink right */
-  --glow-warm-center: rgba(251, 146, 60, 0.45);
+  --glow-warm-center: rgba(251, 146, 60, 0.80);
   --glow-warm-mid: rgba(250, 204, 21, 0.3);
   --glow-warm-left: rgba(34, 211, 238, 0.5);
   --glow-warm-right: rgba(244, 114, 182, 0.5);
 
   /* Green: lime in the middle, mint left, pale lime right */
-  --glow-green-center: rgba(190, 242, 100, 0.45);
+  --glow-green-center: rgba(244, 235, 208, 1);
   --glow-green-left: rgba(134, 239, 172, 0.4);
   --glow-green-right: rgba(217, 249, 157, 0.45);
 }
@@ -232,12 +241,10 @@
 /* Bottom glow gradients -> class="glow-warm" / class="glow-green" */
 @utility glow-warm {
   background-image:
-    radial-gradient(
-      ellipse at 50% 100%,
+    radial-gradient(ellipse at 50% 100%,
       var(--glow-warm-center),
       var(--glow-warm-mid) 35%,
-      transparent 70%
-    ),
+      transparent 70%),
     radial-gradient(ellipse at 0% 100%, var(--glow-warm-left), transparent 45%),
     radial-gradient(ellipse at 100% 100%, var(--glow-warm-right), transparent 45%);
 }
@@ -256,9 +263,11 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }

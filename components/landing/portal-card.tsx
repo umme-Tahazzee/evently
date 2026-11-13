@@ -1,85 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import card1 from "../../app/assets/card1.png";
-import card2 from "@/app/assets/card2.png";
-import card3 from "@/app/assets/card3.png";
+
 import { Cube } from "../shared/Cube";
-import { ArrowUpRight, CalendarCheck, Check, Mail, QrCode, Radio, Users } from "lucide-react";
 import { Stripes } from "../shared/Stripes";
+import { infography, points, stats, themes } from "@/src/data/portal-card-data";
+import { ArrowUpRight } from "lucide-react";
 
-const themes = {
-  gold: {
-    window: "bg-[#F4EBD0]",
-    button:
-      "bg-gradient-to-b from-[#F8E7B0] to-[#D8B24E] text-[#6B4E0F] shadow-[inset_0_1px_0_rgba(255,255,255,0.85),inset_0_-2px_3px_rgba(120,85,10,0.25),0_1px_1px_rgba(0,0,0,0.2),0_5px_10px_rgba(150,110,20,0.3)] group-hover:from-[#FBEFC4] group-hover:to-[#E0BC5E] group-active:shadow-[inset_0_3px_6px_rgba(120,85,10,0.45),0_1px_0_rgba(255,255,255,0.7)]",
-  },
-  green: {
-    window: "bg-[#E4EEDF]",
-    button:
-      "bg-gradient-to-b from-[#D6EBCF] to-[#7DB78A] text-[#1F5A32] shadow-[inset_0_1px_0_rgba(255,255,255,0.85),inset_0_-2px_3px_rgba(20,70,35,0.25),0_1px_1px_rgba(0,0,0,0.2),0_5px_10px_rgba(40,100,60,0.3)] group-hover:from-[#E0F2DA] group-hover:to-[#8CC498] group-active:shadow-[inset_0_3px_6px_rgba(20,70,35,0.45),0_1px_0_rgba(255,255,255,0.7)]",
-  },
-} as const;
 
-const infography = [
-  {
-    id: 1,
-    img: card1,
-    title: "Enter as an Organiser",
-    desc: "Create, configure and manage your events end to end.",
-    theme: "gold",
-  },
-  {
-    id: 2,
-    img: card2,
-    title: "Enter as Staff",
-    desc: "Run on-site operations like check-in and attendee support.",
-    theme: "green",
-  },
-  {
-    id: 3,
-    img: card3,
-    title: "Enter as a Participant",
-    desc: "Access event details, agenda, sessions and updates.",
-    theme: "gold",
-  },
-] as const;
 
-const points = [
-  {
-    icon: Users,
-    title: "Three dedicated portals",
-    text: "Organiser, staff & participant",
-    tone: "bg-teal-50 text-teal-600 ring-teal-200",
-  },
-  {
-    icon: Radio,
-    title: "Live engagement",
-    text: "Polls, reminders & broadcasts",
-    tone: "bg-amber-50 text-amber-600 ring-amber-200",
-  },
-  {
-    icon: QrCode,
-    title: "Smart check-in",
-    text: "QR entry & session attendance",
-    tone: "bg-rose-50 text-rose-600 ring-rose-200",
-  },
-  {
-    icon: Mail,
-    title: "Branded communication",
-    text: "Custom emails & surveys",
-    tone: "bg-violet-50 text-violet-600 ring-violet-200",
-  },
-] as const;
-
-const stats = [
-  { icon: CalendarCheck, value: "500,000+", label: "Event Planners" },
-  { icon: Users, value: "46,500+", label: "Happy Clients" },
-] as const;
-
-export function AppPreview() {
+export function PortalCards() {
   return (
-    <section className="relative mx-auto mt-8 max-w-7xl pb-5 pt-5">
+    <section className="relative mx-auto mt-4 md:mt-8 max-w-7xl pb-5 pt-5 px-2">
       <Cube />
 
       <div className="relative z-10 mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
@@ -91,7 +23,9 @@ export function AppPreview() {
           return (
             <div
               key={item.id}
-              className="group cursor-pointer rounded-[26px] border border-[#D9D5C7] bg-gradient-to-b from-[#FFFFFF] via-[#FCFAF4] to-[#EFEBDD] p-3
+              className="group cursor-pointer rounded-[26px] 
+              border border-[#D9D5C7] bg-gradient-to-b 
+              from-[#FFFFFF] via-[#FCFAF4] to-[#EFEBDD] p-3
               shadow-[inset_0_1px_0_rgba(255,255,255,1),inset_0_-2px_4px_rgba(90,80,50,0.08),0_1px_2px_rgba(40,45,30,0.12),0_10px_18px_rgba(40,45,30,0.08),0_28px_45px_rgba(40,45,30,0.1)]
               transition-all duration-300 ease-out
               hover:-translate-y-1.5
@@ -114,7 +48,8 @@ export function AppPreview() {
                 {/* glass reflection */}
                 <div
                   aria-hidden
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/35 via-transparent to-transparent"
+                  className="pointer-events-none absolute inset-0 
+                  bg-gradient-to-br from-white/35 via-transparent to-transparent"
                 />
                 {/* inner vignette for depth */}
                 <div
@@ -124,7 +59,7 @@ export function AppPreview() {
               </div>
 
               {/* Engraved divider */}
-              <div className="mx-3 mt-4">
+              <div className=" hidden lg:block mx-3 mt-4">
                 <div className="h-px bg-black/10" />
                 <div className="h-px bg-white" />
               </div>
