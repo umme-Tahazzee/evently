@@ -80,6 +80,18 @@
     0 2px 3px rgba(40, 45, 30, 0.14),
     0 8px 16px rgba(40, 45, 30, 0.1);
   --btn-secondary-shadow-active: inset 0 2px 4px rgba(90, 80, 50, 0.2);
+
+  /* ---------- Bottom glow colors (<BottomGlow /> component) ---------- */
+  /* Warm: orange + yellow in the middle, cyan left, pink right */
+  --glow-warm-center: rgba(251, 146, 60, 0.45);
+  --glow-warm-mid: rgba(250, 204, 21, 0.3);
+  --glow-warm-left: rgba(34, 211, 238, 0.5);
+  --glow-warm-right: rgba(244, 114, 182, 0.5);
+
+  /* Green: lime in the middle, mint left, pale lime right */
+  --glow-green-center: rgba(190, 242, 100, 0.45);
+  --glow-green-left: rgba(134, 239, 172, 0.4);
+  --glow-green-right: rgba(217, 249, 157, 0.45);
 }
 
 /* =========================================================
@@ -142,9 +154,9 @@
   /* Fonts
      NOTE: next/font variable name alada rakho, nahole
      --font-mono: var(--font-mono) circular reference hoye jay */
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-jakarta);
   --font-mono: var(--font-geist-mono);
-  --font-heading: var(--font-geist-mono);
+  --font-heading: var(--font-jakarta);
 
   /* Base colors */
   --color-background: var(--background);
@@ -214,6 +226,30 @@
 }
 
 /* =========================================================
+   Custom utilities
+   ========================================================= */
+
+/* Bottom glow gradients -> class="glow-warm" / class="glow-green" */
+@utility glow-warm {
+  background-image:
+    radial-gradient(
+      ellipse at 50% 100%,
+      var(--glow-warm-center),
+      var(--glow-warm-mid) 35%,
+      transparent 70%
+    ),
+    radial-gradient(ellipse at 0% 100%, var(--glow-warm-left), transparent 45%),
+    radial-gradient(ellipse at 100% 100%, var(--glow-warm-right), transparent 45%);
+}
+
+@utility glow-green {
+  background-image:
+    radial-gradient(ellipse at 50% 100%, var(--glow-green-center), transparent 70%),
+    radial-gradient(ellipse at 0% 100%, var(--glow-green-left), transparent 48%),
+    radial-gradient(ellipse at 100% 100%, var(--glow-green-right), transparent 48%);
+}
+
+/* =========================================================
    Base styles
    ========================================================= */
 @layer base {
@@ -224,6 +260,6 @@
     @apply bg-background text-foreground;
   }
   html {
-    @apply font-mono;
+    @apply font-sans;
   }
 }
