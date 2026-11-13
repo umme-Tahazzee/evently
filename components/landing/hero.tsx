@@ -1,18 +1,42 @@
-"use client";
-export function Hero() {
-  return (
-    <section className="mx-auto flex max-w-4xl flex-col items-center px-5 pt-4 md:pt-12 text-center">
-      <h1 className=" text-2xl md:text-4xl font-medium leading-[1.1] tracking-tight text-neutral-950
-       sm:text-5xl md:text-[54px]">
-        The event management platform
-        <br />
-        built for every occasion
-      </h1>
+"use client"
 
-      <p className="mt-4 sm:mt-8 md:mt-6 max-w-4xl text-xs sm:text-xl md:text-lg leading-6 text-neutral-500">
-        Evenly gives organisers a complete toolkit to plan, run and wrap up an event —
-         plus dedicated portals for your participants and your staff. Nothing locked behind a paywall.
-      </p>
-    </section>
+import Image from "next/image";
+import { PortalCards } from "@/components/landing/portal-card";
+import bg from "../../app/assets/texture.jpg";
+import { Glow } from "@/components/shared/Glow";
+import { SectionHeader } from "@/components/shared/SectionHeader";
+
+export default function Hero() {
+  return (
+    <main className="relative overflow-hidden rounded-2xl border border-gray-300 bg-[#f7f7f6] sm:rounded-3xl">
+      {/* Background texture (decorative) */}
+      <Image
+        src={bg}
+        alt=""
+        aria-hidden
+        fill
+        priority
+        sizes="100vw"
+        className="pointer-events-none z-0 object-cover opacity-5"
+      />
+
+
+      <Glow variant="green" />
+
+      {/* Top padding leaves room for the fixed navbar */}
+      <div className="relative z-10 w-full pt-20 sm:pt-24">
+        <SectionHeader
+          title={
+            <>
+              The event management platform
+              <br />
+              built for every occasion
+            </>
+          }
+          description="Evenly gives organisers a complete toolkit to plan, run and wrap up an event — plus dedicated portals for your participants and your staff. Nothing locked behind a paywall."
+        />
+        <PortalCards />
+      </div>
+    </main>
   );
 }
