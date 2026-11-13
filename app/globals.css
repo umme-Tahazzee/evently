@@ -1,9 +1,15 @@
+/* =========================================================
+   Imports
+   ========================================================= */
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
 @custom-variant dark (&:is(.dark *));
 
+/* =========================================================
+   Theme tokens — light (default)
+   ========================================================= */
 :root {
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -23,12 +29,15 @@
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
+
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
+
   --radius: 0.625rem;
+
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -37,65 +46,45 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* ---------- Brand palette (button.tsx theke ana raw colors) ---------- */
+  --brand-300: #78c650; /* default hover (from) */
+  --brand-400: #6dbb45; /* default gradient start */
+  --brand-500: #4b9b25; /* focus ring */
+  --brand-600: #3e8a1e; /* default gradient end */
+  --brand-650: #459423; /* default hover (to) */
+  --brand-700: #2f7a14; /* default border */
+
+  --ink: #172d22; /* secondary + ghost text */
+  --sand-300: #d9d5c7; /* secondary border */
+  --sand-400: #c9c4b2; /* secondary hover border */
+
+  /* Secondary button surface */
+  --btn-secondary-from: #ffffff;
+  --btn-secondary-to: #f3efe3;
+
+  /* Button shadows */
+  --btn-primary-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -2px 3px rgba(20, 70, 10, 0.3),
+    0 1px 2px rgba(0, 0, 0, 0.2),
+    0 6px 14px rgba(60, 130, 30, 0.35);
+  --btn-primary-shadow-active: inset 0 3px 6px rgba(20, 70, 10, 0.5);
+
+  --btn-secondary-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    0 1px 2px rgba(40, 45, 30, 0.12),
+    0 4px 10px rgba(40, 45, 30, 0.06);
+  --btn-secondary-shadow-hover:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    0 2px 3px rgba(40, 45, 30, 0.14),
+    0 8px 16px rgba(40, 45, 30, 0.1);
+  --btn-secondary-shadow-active: inset 0 2px 4px rgba(90, 80, 50, 0.2);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-mono);
-  --font-heading: var(--font-mono);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
-  --color-card: var(--card);
-  --radius-sm: calc(var(--radius) * 0.6);
-  --radius-md: calc(var(--radius) * 0.8);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) * 1.4);
-  --radius-2xl: calc(var(--radius) * 1.8);
-  --radius-3xl: calc(var(--radius) * 2.2);
-  --radius-4xl: calc(var(--radius) * 2.6);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
+/* =========================================================
+   Theme tokens — dark (.dark class)
+   ========================================================= */
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
@@ -115,11 +104,13 @@ body {
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.556 0 0);
+
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
+
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
@@ -128,8 +119,103 @@ body {
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+
+  /* Dark e secondary/ghost button readable rakhar jonno */
+  --ink: oklch(0.985 0 0);
+  --sand-300: oklch(1 0 0 / 15%);
+  --sand-400: oklch(1 0 0 / 25%);
+  --btn-secondary-from: oklch(0.32 0 0);
+  --btn-secondary-to: oklch(0.26 0 0);
+  --btn-secondary-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 1px 2px rgba(0, 0, 0, 0.4);
+  --btn-secondary-shadow-hover:
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 4px 12px rgba(0, 0, 0, 0.45);
+  --btn-secondary-shadow-active: inset 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+/* =========================================================
+   Tailwind theme mapping
+   ========================================================= */
+@theme inline {
+  /* Fonts
+     NOTE: next/font variable name alada rakho, nahole
+     --font-mono: var(--font-mono) circular reference hoye jay */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-geist-mono);
+
+  /* Base colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Brand colors -> bg-brand-400, text-ink, border-sand-300 etc. */
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-650: var(--brand-650);
+  --color-brand-700: var(--brand-700);
+  --color-ink: var(--ink);
+  --color-sand-300: var(--sand-300);
+  --color-sand-400: var(--sand-400);
+  --color-btn-secondary-from: var(--btn-secondary-from);
+  --color-btn-secondary-to: var(--btn-secondary-to);
+
+  /* Button shadows -> shadow-btn-primary etc. */
+  --shadow-btn-primary: var(--btn-primary-shadow);
+  --shadow-btn-primary-active: var(--btn-primary-shadow-active);
+  --shadow-btn-secondary: var(--btn-secondary-shadow);
+  --shadow-btn-secondary-hover: var(--btn-secondary-shadow-hover);
+  --shadow-btn-secondary-active: var(--btn-secondary-shadow-active);
+
+  /* Charts */
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Sidebar */
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Radius */
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+/* =========================================================
+   Base styles
+   ========================================================= */
 @layer base {
   * {
     @apply border-border outline-ring/50;
