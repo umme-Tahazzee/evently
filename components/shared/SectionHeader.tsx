@@ -29,7 +29,8 @@ export function SectionHeader({
         </span>
       )}
 
-      <h2 className="pt-2 text-2xl font-medium leading-[1.1] tracking-tight text-neutral-950 sm:text-5xl md:text-[54px]">
+      <h2 className="pt-2 text-2xl font-medium leading-[1.1] tracking-tight text-neutral-950
+       sm:text-5xl md:text-[54px]">
         {title}
       </h2>
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "../globals.css";
 import { Navbar } from "@/components/layout/navbar";
+import EvenlyFooter from "@/components/layout/footer";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -27,6 +28,7 @@ export default function PublicLayout({
         <div className="relative min-h-screen bg-white p-3 sm:p-4">
           <Navbar />
           {children}
+          <EvenlyFooter/>
         </div>
       </body>
     </html>

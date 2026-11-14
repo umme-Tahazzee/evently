@@ -9,7 +9,7 @@ import { ArrowUpRight } from "lucide-react";
 
 
 
-export function PortalCards() {
+export default function PortalCards() {
   return (
     <section className="relative mx-auto mt-4 md:mt-8 max-w-7xl pb-5 pt-5 px-2">
       <Cube />
@@ -92,7 +92,8 @@ export function PortalCards() {
         })}
       </div>
              {/* Feature highlights */}
-      <ul className="relative z-10 mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <ul className="relative z-10 mx-auto mt-10 grid max-w-6xl grid-cols-1 gap-3 sm:grid-cols-3
+       lg:grid-cols-4">
         {points.map(({ icon: Icon, title, text, tone }) => (
           <li
             key={title}

@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image";
-import { PortalCards } from "@/components/landing/portal-card";
+import  PortalCards  from "@/components/landing/portal-card";
 import bg from "../../app/assets/texture.jpg";
 import { Glow } from "@/components/shared/Glow";
 import { SectionHeader } from "@/components/shared/SectionHeader";
@@ -12,7 +12,7 @@ export default function Hero() {
       {/* Background texture (decorative) */}
       <Image
         src={bg}
-        alt=""
+        alt="backgraund image"
         aria-hidden
         fill
         priority

@@ -187,7 +187,8 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* Brand colors -> bg-brand-400, text-ink, border-sand-300 etc. */
+  /* Brand colors -> bg-brand-400, 
+  -ink, border-sand-300 etc. */
   --color-brand-300: var(--brand-300);
   --color-brand-400: var(--brand-400);
   --color-brand-500: var(--brand-500);
