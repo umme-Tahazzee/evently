@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUp, Check } from "lucide-react";
@@ -57,10 +58,12 @@ const COLUMNS: FooterColumn[] = [
    Main footer
    ========================================================= */
 export default function EvenlyFooter() {
-  const year = new Date().getFullYear();
+  const year = "14 Dec 2026"
 
   return (
-    <footer className="relative mt-20 w-full overflow-hidden border-t border-sand-300 bg-linear-to-b from-transparent via-brand-300/5 to-brand-300/10">
+    <footer className="relative mt-20 w-full 
+    overflow-hidden border-t border-sand-300 bg-linear-to-b 
+    from-transparent via-brand-300/5 to-brand-300/10">
       <Glow variant="green" />
 
       <div className="relative z-10 mx-auto max-w-6xl px-4 pt-14 sm:px-6">
